@@ -11,16 +11,20 @@ export default function TaskCard({ task, reload }: any) {
     setNodeRef,
     transform,
     transition,
+    isDragging,
   } = useSortable({ id: task.id });
 
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
+    opacity: isDragging ? 0.5 : 1,
   };
 
   const remove = async (e: any) => {
-    e.stopPropagation();   
+    e.stopPropagation();
     e.preventDefault();
+
+    if (!confirm("Delete this task?")) return;
 
     await fetch("/api/tasks", {
       method: "DELETE",
@@ -34,9 +38,9 @@ export default function TaskCard({ task, reload }: any) {
     <div
       ref={setNodeRef}
       style={style}
-      className="group p-4 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-600 shadow-lg hover:shadow-xl transition flex justify-between items-center"
+      className="group flex items-center justify-between p-4 rounded-xl bg-slate-900 border border-slate-700 shadow-lg"
     >
-      {/* Drag handle only */}
+      {/* Drag handle ONLY */}
       <div className="flex items-center gap-3">
         <span
           {...attributes}
@@ -52,6 +56,7 @@ export default function TaskCard({ task, reload }: any) {
       {/* Delete button */}
       <button
         onClick={remove}
+        onPointerDown={(e) => e.stopPropagation()}   // ⭐ KEY FIX
         className="opacity-0 group-hover:opacity-100 bg-red-600 hover:bg-red-700 text-white p-2 rounded-lg transition"
       >
         <Trash2 size={16} />
