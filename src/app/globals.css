@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "reactflow/dist/style.css";
 
 body {
   background: radial-gradient(circle at top, #0f172a, #020617);
