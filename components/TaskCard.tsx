@@ -40,7 +40,7 @@ export default function TaskCard({ task, reload }: any) {
       style={style}
       className="group flex items-center justify-between p-4 rounded-xl bg-slate-900 border border-slate-700 shadow-lg"
     >
-      {/* Drag handle ONLY */}
+      
       <div className="flex items-center gap-3">
         <span
           {...attributes}
@@ -53,10 +53,10 @@ export default function TaskCard({ task, reload }: any) {
         <p className="font-medium">{task.title}</p>
       </div>
 
-      {/* Delete button */}
+   
       <button
         onClick={remove}
-        onPointerDown={(e) => e.stopPropagation()}   // ⭐ KEY FIX
+        onPointerDown={(e) => e.stopPropagation()}  
         className="opacity-0 group-hover:opacity-100 bg-red-600 hover:bg-red-700 text-white p-2 rounded-lg transition"
       >
         <Trash2 size={16} />

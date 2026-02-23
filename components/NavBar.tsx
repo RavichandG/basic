@@ -10,7 +10,7 @@ export default function Navbar() {
 
    
         <Link href="/" className="text-2xl font-bold text-sky-400">
-          TaskFlow
+          Task management Application
         </Link>
 
     
@@ -28,6 +28,10 @@ export default function Navbar() {
           >
             <LayoutDashboard size={16}/> Plan
           </Link>
+
+          <Link href="/flow" className="hover:text-sky-400">
+  Flow
+</Link>
         </div>
 
       </div>

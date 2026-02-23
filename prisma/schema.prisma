@@ -19,3 +19,16 @@ model Task {
   column   String   @default("todo")
   createdAt DateTime @default(now())
 }
+
+model FlowNode {
+  id        String   @id
+  label     String
+  positionX Float
+  positionY Float
+}
+
+model FlowEdge {
+  id     String @id
+  source String
+  target String
+}

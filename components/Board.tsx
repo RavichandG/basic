@@ -40,10 +40,10 @@ export default function Board() {
   return (
     <div className="space-y-6">
 
-      {/* Create Task */}
+ 
       <CreateTask reload={load} />
 
-      {/* Board */}
+  
       <DndContext collisionDetection={closestCorners} onDragEnd={dragEnd}>
         <div className="grid md:grid-cols-3 gap-6">
 

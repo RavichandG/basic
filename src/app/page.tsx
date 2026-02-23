@@ -5,7 +5,7 @@ export default function Home() {
       <div className="max-w-3xl text-center space-y-6">
 
         <h1 className="text-5xl font-bold bg-gradient-to-r from-sky-400 to-purple-500 text-transparent bg-clip-text">
-          TaskFlow
+          Task Management Application
         </h1>
 
         <p className="text-xl text-slate-300">
